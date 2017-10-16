@@ -3,9 +3,10 @@
     <h1> To Do</h1>
     <div> {{ todos }} </div>
     <ul>
-      <li v-for="todo in todos">
+      <li v-for="(todo, index) in todos">
         <input type="checkbox" v-bind="{checked: todo.done}" v-on:click="todo.done = !todo.done" v-model="todo.done">
         <span v-bind:class="{done: todo.done}"> {{todo.task}} </span>
+        <span class="linkLike" v-on:click="del(index)">[x]</span>
       </li>
     </ul>
     <input type="text" placeholder="new task" v-model="newTask" v-on:keyup.enter="add()">
@@ -27,11 +28,18 @@
     },
     methods: {
       add: function () {
-        this.todos.push({
-          task: this.newTask,
-          done: false
-        })
+        this.todos.push(
+          {
+            task: this.newTask,
+            done: false
+          }
+        )
         this.newTask = ''
+      },
+      del: function (index) {
+        if (confirm('are you sure?')) {
+          this.todos.splice(index, 1)
+        }
       }
     }
   }
@@ -62,5 +70,10 @@
   .done {
     text-decoration: line-through;
     color: #aaa;
+  }
+
+  .linkLike {
+    color: blue;
+    cursor: pointer;
   }
  </style>
