@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Test from '@/components/Test'
 import ToDo from '@/components/ToDo'
+import GoogleMap from '@/components/GoogleMap'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/todo',
       name: 'ToDo',
       component: ToDo
+    },
+    {
+      path: '/map',
+      name: 'GoogleMap',
+      component: GoogleMap
     }
   ]
 })

@@ -1,10 +1,11 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2>Links</h2>
     <ul>
       <li><router-link to="/test">test</router-link></li>
       <li><router-link to="/todo">todo</router-link></li>
+      <li><router-link to="/map">map</router-link></li>
     </ul>
   </div>
 </template>
@@ -14,7 +15,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'とりあえず色々遊んでみた by noza'
     }
   }
 }
@@ -39,4 +40,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>
