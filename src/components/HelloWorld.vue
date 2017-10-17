@@ -6,6 +6,7 @@
       <li><router-link to="/test">test</router-link></li>
       <li><router-link to="/todo">todo</router-link></li>
       <li><router-link to="/map">map</router-link></li>
+      <li><router-link to="/weather">weather</router-link></li>
     </ul>
   </div>
 </template>

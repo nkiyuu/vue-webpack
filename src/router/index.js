@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Test from '@/components/Test'
 import ToDo from '@/components/ToDo'
 import GoogleMap from '@/components/GoogleMap'
+import Weather from '@/components/Weather'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/map',
       name: 'GoogleMap',
       component: GoogleMap
+    },
+    {
+      path: '/weather',
+      name: 'Weather',
+      component: Weather
     }
   ]
 })
