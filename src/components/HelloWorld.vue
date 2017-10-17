@@ -1,14 +1,16 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Links</h2>
-    <ul>
-      <li><router-link to="/test">test</router-link></li>
-      <li><router-link to="/todo">todo</router-link></li>
-      <li><router-link to="/map">map</router-link></li>
-      <li><router-link to="/weather">weather</router-link></li>
-    </ul>
-  </div>
+  <header>
+    <div>
+      <!--<h1>{{ msg }}</h1>-->
+      <h2>Links</h2>
+      <ul class="list-inline">
+        <li><router-link to="/test">test</router-link></li>
+        <li><router-link to="/todo">todo</router-link></li>
+        <li><router-link to="/map">map</router-link></li>
+        <li><router-link to="/weather">weather</router-link></li>
+      </ul>
+    </div>
+  </header>
 </template>
 
 <script>
@@ -16,7 +18,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'とりあえず色々遊んでみた by noza'
+      msg: 'とりあえず色々遊んでみた by yaya'
     }
   }
 }
