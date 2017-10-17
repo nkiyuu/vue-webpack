@@ -7,6 +7,13 @@ import router from './router'
 import config from './config'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
+import BootstrapVue from 'bootstrap-vue'
+/* ...there may be other imports here */
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.css'
+
+Vue.use(BootstrapVue)
+
 Vue.config.productionTip = false
 
 Vue.use(VueGoogleMaps, {

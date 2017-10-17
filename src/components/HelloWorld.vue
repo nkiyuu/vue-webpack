@@ -1,14 +1,13 @@
 <template>
   <header>
     <div>
-      <!--<h1>{{ msg }}</h1>-->
-      <h2>Links</h2>
-      <ul class="list-inline">
-        <li><router-link to="/test">test</router-link></li>
-        <li><router-link to="/todo">todo</router-link></li>
-        <li><router-link to="/map">map</router-link></li>
-        <li><router-link to="/weather">weather</router-link></li>
-      </ul>
+      <!--<h1>{{ msg }}</h1>--
+      <!--<ul class="list-inline">-->
+        <!--<li><router-link to="/test">test</router-link></li>-->
+        <!--<li><router-link to="/todo">todo</router-link></li>-->
+        <!--<li><router-link to="/map">map</router-link></li>-->
+        <!--<li><router-link to="/weather">weather</router-link></li>-->
+      <!--</ul>-->
     </div>
   </header>
 </template>
