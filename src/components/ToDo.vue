@@ -72,7 +72,7 @@
 
 <style scoped>
   body { font-size: 13px; font-family: Arial; }
-  h1 { font-size: 14px; border-bottom: 1px solid #ddd; padding: 0 0 5px; }
+  h1 { font-size: 14px; padding: 0 0 5px; }
   ul { list-style-type: none; padding: 0; margin: 0 0 5px; }
   ul > li { padding: 0 0 5px; }
   input[type=text] { padding: 4px; border-radius: 4px; }
