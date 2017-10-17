@@ -1,12 +1,16 @@
 <template>
   <div class="todo">
-    <h1> To Do</h1>
-    <div> {{ todos }} </div>
+    <h1>
+      To Do
+      <small>({{remaining}}/{{todos.length}})</small>
+      <!--<span class="linklike" v-on:click="purge()">[purge]</span>-->
+    </h1>
+
     <ul>
       <li v-for="(todo, index) in todos">
         <input type="checkbox" v-bind="{checked: todo.done}" v-on:click="todo.done = !todo.done" v-model="todo.done">
         <span v-bind:class="{done: todo.done}"> {{todo.task}} </span>
-        <span class="linkLike" v-on:click="del(index)">[x]</span>
+        <span class="linklike" v-on:click="del(index)">[x]</span>
       </li>
     </ul>
     <input type="text" placeholder="new task" v-model="newTask" v-on:keyup.enter="add()">
@@ -26,8 +30,19 @@
         ]
       }
     },
+    computed: {
+      remaining: function () {
+        var count = 0
+        for (var i = 0, j = this.todos.length; i < j; i++) {
+          if (!this.todos[i].done) {
+            count++
+          }
+        }
+        return count
+      }
+    },
     methods: {
-      add: function () {
+      add () {
         this.todos.push(
           {
             task: this.newTask,
@@ -36,9 +51,17 @@
         )
         this.newTask = ''
       },
-      del: function (index) {
+      del (index) {
         if (confirm('are you sure?')) {
           this.todos.splice(index, 1)
+        }
+      },
+      purge () {
+        var i = this.todos.length
+        while (i--) {
+          if (this.todo[i].done) {
+            this.todos.splice(i, 1)
+          }
         }
       }
     }
@@ -46,34 +69,12 @@
 </script>
 
 <style scoped>
-  h1 {
-    font-size: 30px;
-    border-bottom: 1px solid;
-    padding: 0 0 5px;
-  }
-
-  ul {
-    list-style-type: none ;
-    padding: 0;
-    margin: 0 0 5px;
-  }
-
-  ul > li {
-    padding: 0 0 5px;
-  }
-
-  input[type=text] {
-    padding: 4px;
-    border-radius: 4px;
-  }
-
-  .done {
-    text-decoration: line-through;
-    color: #aaa;
-  }
-
-  .linkLike {
-    color: blue;
-    cursor: pointer;
-  }
+  body { font-size: 13px; font-family: Arial; }
+  h1 { font-size: 14px; border-bottom: 1px solid #ddd; padding: 0 0 5px; }
+  ul { list-style-type: none; padding: 0; margin: 0 0 5px; }
+  ul > li { padding: 0 0 5px; }
+  input[type=text] { padding: 4px; border-radius: 4px; }
+  .done { text-decoration: line-through;color: #dddddd;}
+  .linklike{
+    color: blue; cursor: pointer; font-weight: normal;}
  </style>
