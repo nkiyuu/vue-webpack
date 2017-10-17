@@ -1,6 +1,5 @@
 <template>
   <div class="test">
-    <h1>test</h1>
     <div> {{ msg }} </div>
     <textarea v-model="msg" placeholder="test data binding"></textarea>
   </div>
