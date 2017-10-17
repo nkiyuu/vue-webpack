@@ -3,7 +3,7 @@
     <h1>
       To Do
       <small>({{remaining}}/{{todos.length}})</small>
-      <!--<span class="linklike" v-on:click="purge()">[purge]</span>-->
+      <span class="linklike" v-on:click="purge()">[purge]</span>
     </h1>
 
     <ul>
@@ -57,9 +57,11 @@
         }
       },
       purge () {
-        var i = this.todos.length
+        let i = this.todos.length
+        console.log(i)
         while (i--) {
-          if (this.todo[i].done) {
+          if (this.todos[i].done) {
+//            console.log(i)
             this.todos.splice(i, 1)
           }
         }
