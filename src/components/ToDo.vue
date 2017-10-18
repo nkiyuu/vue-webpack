@@ -3,14 +3,14 @@
     <h1>
       To Do
       <small>({{remaining}}/{{todos.length}})</small>
-      <span class="linklike" v-on:click="purge()">[purge]</span>
+      <b-button v-on:click="purge()">delete</b-button>
+
     </h1>
 
     <ul>
       <li v-for="(todo, index) in todos">
         <input type="checkbox" v-bind="{checked: todo.done}" v-on:click="todo.done = !todo.done" v-model="todo.done">
         <span v-bind:class="{done: todo.done}"> {{todo.task}} </span>
-        <span class="linklike" v-on:click="del(index)">[x]</span>
       </li>
     </ul>
     <input type="text" placeholder="new task" v-model="newTask" v-on:keyup.enter="add()">
@@ -72,11 +72,11 @@
 
 <style scoped>
   body { font-size: 13px; font-family: Arial; }
-  h1 { font-size: 14px; padding: 0 0 5px; }
+  h1 { font-size: 20px; padding: 0 0 5px; }
   ul { list-style-type: none; padding: 0; margin: 0 0 5px; }
   ul > li { padding: 0 0 5px; }
   input[type=text] { padding: 4px; border-radius: 4px; }
   .done { text-decoration: line-through;color: #dddddd;}
   .linklike{
-    color: blue; cursor: pointer; font-weight: normal;}
+    color: dodgerblue; cursor: pointer; font-weight: normal;}
  </style>
