@@ -19,7 +19,6 @@
     <router-view/>
   </div>
 
-
   </body>
 </template>
 

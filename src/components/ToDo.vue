@@ -1,11 +1,11 @@
 <template>
   <div class="todo">
     <h1>
-      To Do
-      <small>({{remaining}}/{{todos.length}})</small>
-      <b-button v-on:click="purge()">delete</b-button>
-
+      To Do List
     </h1>
+    <h2>
+      <b-button v-on:click="purge()">Delete Checked Task!</b-button>
+    </h2>
 
     <ul>
       <li v-for="(todo, index) in todos">
@@ -72,7 +72,10 @@
 
 <style scoped>
   body { font-size: 13px; font-family: Arial; }
-  h1 { font-size: 20px; padding: 0 0 5px; }
+  h1 {
+    position: relative;
+  }
+
   ul { list-style-type: none; padding: 0; margin: 0 0 5px; }
   ul > li { padding: 0 0 5px; }
   input[type=text] { padding: 4px; border-radius: 4px; }
